@@ -165,8 +165,16 @@ Empacotamento (pkg.tar.zst)
 
 MIT (ou ajuste conforme sua preferência).
 
-👤 Autor
+👤 Fernando Albino
 
+Hardware: 
+```
+Processador Ryzen 9 5900X
+Memória: 32 GB DDR4 3600 MHz 
+Placa de vídeo: RTX 4070 Ti SUPER Trinity 
+Placa Mãe: Asus B550M-Plus
+NVME 1Tb
+```
 Criado para uso real em CachyOS / Arch Linux
 com foco em estabilidade, clareza e controle.
 
