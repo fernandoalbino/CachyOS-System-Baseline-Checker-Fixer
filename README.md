@@ -172,22 +172,3 @@ com foco em estabilidade, clareza e controle.
 
 Contribuições são bem-vindas, desde que mantenham o mesmo padrão técnico.
 
-
----
-
-## ✔ Pronto para GitHub
-
-Você agora tem:
-
-- Script **engenharia-grade**
-- README **profissional**
-- Documentação coerente com o código
-- Projeto apresentável publicamente
-
-Se quiser, posso:
-- ajustar o README para **inglês**
-- criar **tags / releases**
-- escrever um **CHANGELOG.md**
-- ou preparar o repositório para **pacman hook**
-
-É só dizer o próximo passo.
