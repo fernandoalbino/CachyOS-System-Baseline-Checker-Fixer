@@ -81,7 +81,7 @@ Não é um script genérico de “tuning automático”.
 .
 ├── cachyos-system-baseline.sh
 └── README.md
-
+```
 
 ▶️ Uso
 1. Tornar o script executável
