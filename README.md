@@ -1,3 +1,88 @@
+# CachyOS System Baseline Checker & Fixer
+
+Script profissional para **verificação, validação e correção controlada** do baseline de sistema em **CachyOS / Arch Linux**, focado em:
+
+- systemd-boot
+- NVIDIA + Wayland
+- AMD P-State
+- Btrfs
+- Swappiness
+- Pós-update safety
+
+Projetado para **ambientes reais**, evitando edições perigosas ou automações cegas.
+
+---
+
+## ✨ Principais Características
+
+- ✅ Detecta **divergências reais** no sistema
+- ✅ Mostra exatamente **o que está errado**
+- ✅ Pergunta antes de alterar (modo interativo)
+- ✅ Suporte a modo **100% automático**
+- ✅ Edita **somente a entry ativa** do systemd-boot
+- ✅ Cria **backup automático** antes de qualquer modificação
+- ✅ Idempotente (pode ser executado repetidamente)
+- ✅ Seguro para rodar após updates
+- ❌ Não faz alterações perigosas automaticamente (ex.: `/etc/fstab`)
+
+---
+
+## 🎯 Público-alvo
+
+Este script é voltado para:
+
+- Usuários avançados de Arch / CachyOS
+- Ambientes com **AMD + NVIDIA**
+- Sistemas usando **KDE Wayland**
+- Quem deseja **baseline explícito e auditável**
+- Quem quer evitar regressões após updates
+
+Não é um script genérico de “tuning automático”.
+
+---
+
+## 🧠 O que o script verifica
+
+### Boot / Kernel
+- Entry ativa do `systemd-boot`
+- Parâmetros críticos no kernel cmdline:
+  - `amd_pstate=active`
+  - `amd_pstate.shared_mem=1`
+  - `nvidia_drm.modeset=1`
+  - `nvidia_drm.fbdev=1`
+
+### NVIDIA
+- DRM/KMS ativo
+- Framebuffer funcional
+- Compatibilidade com Wayland
+
+### Sessão gráfica
+- Confirma se o sistema está em **Wayland**
+
+### CPU (AMD)
+- Status do `amd_pstate`
+
+### Memória
+- Valor de `vm.swappiness`
+
+### Btrfs
+- Opções de mount recomendadas:
+  - `noatime`
+  - `compress=zstd`
+  - `commit=60`
+
+> ⚠️ O script **não edita automaticamente o `/etc/fstab`**, apenas alerta.
+
+---
+
+## 📂 Estrutura do Repositório
+
+```text
+.
+├── cachyos-system-baseline.sh
+└── README.md
+
+
 ▶️ Uso
 1. Tornar o script executável
 chmod +x cachyos-system-baseline.sh
